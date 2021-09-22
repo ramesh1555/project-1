@@ -18,18 +18,18 @@
 <input type="radio" name="r1" value="add" />addition
 <br />
 </label>
- 
+</div>
+ <div>
 <label>
 <input type="radio" name="r1" value="sub" />difference
 <br />
 </label>
-       
+ </div>     
 <label>
 <input type="radio" name="r1" value="sub" />product
 <br />
 </label>       
-       
-</div>
+ </div>
 <input type="submit" value="submit" />
 </form>
 </body>
