@@ -11,12 +11,12 @@ public class Calculator extends HttpServlet
 		return first+second;
 	}
 	
-{	public long subFucn(long first, long second){
+	public long subFucn(long first, long second){
 		
 		return second-first;
 	}
 	
-{	public long mulFucn(long first, long second){
+	public long mulFucn(long first, long second){
 		
 		return first*second;
 	}
