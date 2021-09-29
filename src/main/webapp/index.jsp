@@ -23,10 +23,6 @@
 <br />
 </label>
 </div>
-<label>
-<input type="radio" name="r3" value="prod" />product
-<br />
-</label>
 <input type="submit" value="submit" />
 </form>
 </body>
