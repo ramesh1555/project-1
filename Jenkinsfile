@@ -19,9 +19,16 @@ pipeline {
             steps {
                 echo 'Sonar Analysis....'
 		sh 'mvn sonar:sonar \
-  -Dsonar.host.url=http://54.242.102.13:9000 \
+  -Dsonar.host.url=http://34.205.15.108:9000 \
   -Dsonar.login=81658bba0c085187900ffc8b8872b2fbd934ff5f'
             }
+		
         }
+	stage('run playbooks on ansible server'){
+		def dockerrun = 'ansible-playbook cal.yml'
+		sh sshagent(['ansible_docker']) {
+			sh "ssh -o StrictHostKeyChecking=no centos@172.31.27.37 ${dockerrun}"
+      }
+	  }
     }
 }
