@@ -24,11 +24,11 @@ pipeline {
             }
 		
         }
-	stage('run playbooks on ansible server'){
+	stage('run playbooks on ansible server') {
 		def dockerrun = 'ansible-playbook cal.yml'
 		sh sshagent(['ansible_docker']) {
 			sh "ssh -o StrictHostKeyChecking=no centos@172.31.27.37 ${dockerrun}"
-      }
-	  }
+            }
+	    } 
     }
 }
