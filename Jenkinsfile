@@ -20,7 +20,7 @@ pipeline {
                 echo 'Sonar Analysis....'
 		sh 'mvn sonar:sonar \
   -Dsonar.host.url=http://34.205.15.108:9000 \
-  -Dsonar.login=81658bba0c085187900ffc8b8872b2fbd934ff5f'
+  -Dsonar.login='c933f329af1e8eb72d431d40358d465abbdc2a3b'
             }
 		
         }
