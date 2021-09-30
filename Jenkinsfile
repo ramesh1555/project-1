@@ -38,7 +38,7 @@ pipeline {
 	
              sshagent(['ansible_docker']) {
 		  echo 'reomte....'
-		  sh 'ssh -o StrictHostKeyChecking=no centos@172.31.27.37 cal.yml'
+		  sh 'ssh -o StrictHostKeyChecking=no centos@172.31.27.37 mkdir ram'
     
             }
         }
