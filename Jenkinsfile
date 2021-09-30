@@ -35,9 +35,9 @@ pipeline {
 	
 	 
 	stage('run ansible playbook ') {
-		def ansible = 'ansible-playbook cal.yml'
-            sshagent(['ansible_docker']) {
-		    sh "ssh -o StrictHostKeyChecking=no centos@172.31.27.37 ${ansible}" 
+	
+             sshagent(['ansible_docker']) {
+		    sh 'ssh -o StrictHostKeyChecking=no centos@172.31.27.37 cal.yml'
     
             }
         }
