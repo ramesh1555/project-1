@@ -4,41 +4,41 @@ pipeline {
     stages {
         stage('Vaidation') {
             steps {
-                echo 'Validate Project..'
-		sh 'mvn validate'
-		sh 'mvn compile'
+              echo 'Validate Project..'
+		      sh 'mvn validate'
+		      sh 'mvn compile'
             }
         }
         stage('UnitTest') {
             steps {
-                echo 'Testing..'
-		sh 'mvn test'
+              echo 'Testing..'
+		      sh 'mvn test'
             }
         }
         stage('SonarAnalysis') {
             steps {
-                echo 'Sonar Analysis....'
-		sh 'mvn sonar:sonar \
+              echo 'Sonar Analysis....'
+		      sh 'mvn sonar:sonar \
   -Dsonar.host.url=http://34.205.15.108:9000 \
   -Dsonar.login=c933f329af1e8eb72d431d40358d465abbdc2a3b'
             }
 		
         }
 	
-	stage('Deploy') {
+	    stage('Deploy') {
             steps {
-                echo 'Deploy....'
-		sh 'mvn deploy'
+              echo 'Deploy....'
+		      sh 'mvn deploy'
             }
 		
         }
 	
 	 
-	stage('ansible_docker') {
+	    stage('ansible_docker') {
 	
-             sshagent(['ansible_docker']) {
-		  echo 'reomte....'
-		  sh 'ssh -o StrictHostKeyChecking=no centos@172.31.27.37 mkdir ram'
+            sshagent(['ansible_docker']) {
+		      echo 'reomte....'
+		      sh 'ssh -o StrictHostKeyChecking=no centos@172.31.27.37 mkdir ram'
     
             }
         }
