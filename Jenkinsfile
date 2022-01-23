@@ -25,14 +25,7 @@ pipeline {
 		
         }
 	
-	    stage('Deploy') {
-            steps {
-              echo 'Deploy....'
-		      sh 'mvn deploy'
-            }
-		
-        }
-	
+
 	 
 	
 		
